@@ -4,7 +4,6 @@ import React, {useState, useEffect} from 'react';
 const Quotes = () =>{
     const [quote,setQuote] = useState('');
     const [author,setAuthor] = useState('');
-   /// const [color,setColor] = useState('');
 
     useEffect(()=>{
         getQuote()
@@ -18,13 +17,9 @@ const Quotes = () =>{
             let dataQuotes = data.quotes;
             let randomNum = Math.floor(Math.random() * dataQuotes.length);
             let randomQuote = dataQuotes[randomNum];
-            let num1 = randomNum + 100;
-            let num2 = randomNum + 150;
-            let num3 = randomNum + 50;
-            let colrs = [num1,num2,num3];
+          
             setQuote(randomQuote.quote)
             setAuthor(randomQuote.author)
-            console.log(num1,num2,num3);
         })
     }
         const handleClick = () =>{
